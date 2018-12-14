@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>当前所在子系统：测试系统1</h1>
+<h2><a href="http://springbootcasclient.com:8001/">系统1</a></h2>
+<h2><a href="http://springbootcasclient.com:8002/">系统2</a></h2>
+<b>Authenticated User Id:</b> <a href="logout.jsp" title="Click here to log out" th:text="${#request.remoteUser}"/>
+<br/>
+<a th:href="${#request.contextPath}+'/logoutDefault'" title="Click here to log out">退出系统（默认退出页面）</a>
+<a th:href="${#request.contextPath}+'/logoutCustom'" title="Click here to log out">退出系统（定制退出页面）</a>
+</body>
+</html>

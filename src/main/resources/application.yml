@@ -1,0 +1,7 @@
+# 参考 https://www.jianshu.com/p/15b88fa0d068
+server:
+  port: 8001
+#  成功Logout后，如果包含Service参数，则重定向到Service指定的网址。
+cas:
+  logout:
+    followServiceRedirects: true
