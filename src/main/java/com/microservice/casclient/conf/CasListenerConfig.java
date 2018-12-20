@@ -17,6 +17,9 @@ import java.util.EventListener;
 public class CasListenerConfig {
     /**
      * 添加监听器
+     * 注销sessionMappingStorage是靠SingleSignOutHttpSessionListener来实现的,
+     * 当有session被销毁的时候,触发将sessionMappingStorage中对应sessionid中的数据删除。
+     * 所以在配置单点登出的时候,一定要配置这个监听器,否则客户端很容易导致内存溢出的
      * @return
      */
     @Bean

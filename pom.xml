@@ -46,6 +46,11 @@
             <artifactId>cas-client-core</artifactId>
             <version>${java.cas.client.version}</version>
         </dependency>
+        <!--引入日志 @Slf4j注解-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
