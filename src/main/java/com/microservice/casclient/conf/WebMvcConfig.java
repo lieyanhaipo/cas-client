@@ -18,6 +18,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         InterceptorRegistration interceptorRegistration = registry.addInterceptor(getHandlerInterceptor());
+        //对所有访问进行拦截
         interceptorRegistration.addPathPatterns("/**");
 //        interceptorRegistration.excludePathPatterns("/user/login");
     }
