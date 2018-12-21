@@ -1,8 +1,8 @@
 package com.microservice.casclient.conf;
 
 
-import com.sun.media.jfxmedia.logging.Logger;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
 import javax.servlet.*;
@@ -16,22 +16,22 @@ import java.io.IOException;
  * @Author libing
  * @Date 2018/12/20
  **/
-@WebFilter(filterName = "customFilter", urlPatterns = {"/*"})
-@Order(-1)
+@WebFilter(filterName = "customFilter", urlPatterns = {"/*"}) //@WebFilter时Servlet3.0新增的注解，原先实现过滤器，需要在web.xml中进行配置，而现在通过此注解，启动启动时会自动扫描自动注册。
+@Order(Ordered.HIGHEST_PRECEDENCE)   // 设置加载顺序
 @Slf4j
 public class CustomFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        log.info("customFilter 请求处理");
+        log.info("customFilter: 请求处理");
     }
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        log.info("customFilter 初始化");
+        log.info("customFilter: 初始化");
     }
 
     @Override
     public void destroy() {
-        log.info("customFilter 销毁");
+        log.info("customFilter: 销毁");
     }
 }

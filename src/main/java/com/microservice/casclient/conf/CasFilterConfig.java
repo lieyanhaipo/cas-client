@@ -86,7 +86,7 @@ public class CasFilterConfig {
         initParameters.put("serverName", SERVER_NAME);
         //忽略/logout的路径
         initParameters.put("ignorePattern", "/logout/*");
-        initParameters.put("ignoreUrlPatternType", "com.microservice.casclient.UrlPatternMatcherStrategyImpl");
+        initParameters.put("ignoreUrlPatternType", "com.microservice.casclient.conf.UrlPatternMatcherStrategyImpl");
 
         registration.setInitParameters(initParameters);
         // 设定加载的顺序

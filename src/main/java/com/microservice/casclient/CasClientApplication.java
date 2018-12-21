@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import sun.rmi.runtime.Log;
 
 @SpringBootApplication
-@ServletComponentScan
+@ServletComponentScan  //在启动类加入@ServletComponentScan注解即可扫描servlet组件
 @Slf4j
 public class CasClientApplication {
     public static void main(String[] args) {
