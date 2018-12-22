@@ -15,10 +15,10 @@ public class CasClientApplication {
         SpringApplication.run(CasClientApplication.class, args);
         log.info("casClient 服务启动");
         //测试日志级别
-        log.debug("debug message");
-        log.warn("warn message");
-        log.info("info message");
-        log.error("error message");
-        log.trace("trace message");
+//        log.debug("debug message");
+//        log.warn("warn message");
+//        log.info("info message");
+//        log.error("error message");
+//        log.trace("trace message");
     }
 }

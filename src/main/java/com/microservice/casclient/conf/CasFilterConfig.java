@@ -17,7 +17,7 @@ import java.util.Map;
  * @Author libing
  * @Date 2018/11/23
  **/
-@Configuration
+//@Configuration
 public class CasFilterConfig {
     private static final String CAS_SERVER_URL_PREFIX = "https://casserver.com:8443/";
     private static final String CAS_SERVER_URL_LOGIN = "https://casserver.com:8443/login";

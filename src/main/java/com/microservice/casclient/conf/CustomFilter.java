@@ -16,13 +16,18 @@ import java.io.IOException;
  * @Author libing
  * @Date 2018/12/20
  **/
-@WebFilter(filterName = "customFilter", urlPatterns = {"/*"}) //@WebFilter时Servlet3.0新增的注解，原先实现过滤器，需要在web.xml中进行配置，而现在通过此注解，启动启动时会自动扫描自动注册。
+@WebFilter(filterName = "customFilter", urlPatterns = {"/inter/*"}) //@WebFilter时Servlet3.0新增的注解，原先实现过滤器，需要在web.xml中进行配置，而现在通过此注解，启动启动时会自动扫描自动注册。
 @Order(Ordered.HIGHEST_PRECEDENCE)   // 设置加载顺序
 @Slf4j
 public class CustomFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         log.info("customFilter: 请求处理");
+        System.out.println("CustomFilter doFilter before...");
+//        filterChain.doFilter(request, response);这个方法的调用作为分水岭。
+// 事实上调用Servlet的doService()方法是在chain.doFilter(request, response);这个方法中进行的。
+        filterChain.doFilter(servletRequest, servletResponse);
+        System.out.println("CustomFilter doFilter after...");
     }
 
     @Override

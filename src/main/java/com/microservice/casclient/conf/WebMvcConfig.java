@@ -1,5 +1,6 @@
 package com.microservice.casclient.conf;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -17,10 +18,9 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
     //多个拦截器时 以此添加 执行顺序按添加顺序
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        InterceptorRegistration interceptorRegistration = registry.addInterceptor(getHandlerInterceptor());
-        //对所有访问进行拦截
-        interceptorRegistration.addPathPatterns("/**");
+        registry.addInterceptor(getHandlerInterceptor()).addPathPatterns("/inter/*");
 //        interceptorRegistration.excludePathPatterns("/user/login");
+        super.addInterceptors(registry);
     }
 
     @Bean
